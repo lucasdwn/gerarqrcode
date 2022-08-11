@@ -1,0 +1,76 @@
+
+main {
+width: 100vw;
+height: 100vh;
+background: #23233B;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+header h2{
+  margin-top: 0;
+  font-size: 25px;
+  color: white;
+}
+
+header h1 {
+  font-size: 50px;
+  color: #2C9DEC;
+}
+
+.App {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  width: 350px;
+  height: 400px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a h2{
+  font-size: 25px;
+  color: white;
+}
+
+a h2:hover{
+  cursor: pointer;
+  color: #2C9DEC;
+}
+
+h1{
+  display: flex;
+  margin: 0 auto;
+}
+
+input {
+  height: 30px;
+  width: 300px;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+input:hover {
+  color: #2C9DEC;
+  border: 1px solid #2C9DEC;
+}
+
+.test{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

@@ -34,7 +34,7 @@ header h1 {
   background-color: white;
   border-radius: 20px;
   width: 350px;
-  height: 400px;
+  height: 450px;
 }
 
 a {
@@ -73,4 +73,27 @@ input:hover {
   display: flex;
   gap: 15px;
   align-items: center;
+}
+
+.buttons{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.buttons button{
+  width: 150px;
+  font-size: 1.2rem;
+  border-radius: 13px;
+  margin: 0 auto;
+  color: #2C9DEC;
+  border: 1px solid #2C9DEC;
+  background: transparent;
+}
+
+.buttons button:hover{
+  color: #FFFFFFFf;
+  border: 1px solid #FFFFFFFf;
+  background: #23233B;
+  transition: 0.3s ease-in-out;
 }

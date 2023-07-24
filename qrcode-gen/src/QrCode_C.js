@@ -1,18 +1,26 @@
-import React, { useEffect, useRef } from 'react';
-import QRCode from 'qrcode'
+import React, { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
+import QRCode from 'qrcode';
 
-export default function QrCode_C({text}) {
-    
-    const Canvas = useRef()
-    
-    useEffect(()=>{
-        QRCode.toCanvas(Canvas.current, text, { width: 300 }, (error) =>{
-            console.log(error)
-        })
-    }, [text])
-    return(
-        <div>
-            <canvas ref={Canvas} id="canvas"></canvas>
-        </div>
-    )
-}
+const QrCode_C = forwardRef(({ text }, ref) => {
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    QRCode.toCanvas(canvasRef.current, text, { width: 300 }, (error) => {
+      if (error) {
+        console.error('Error generating QRCode:', error);
+      }
+    });
+  }, [text]);
+
+  useImperativeHandle(ref, () => ({
+    getCanvas: () => canvasRef.current,
+  }));
+
+  return (
+    <div>
+      <canvas ref={canvasRef} id="canvas"></canvas>
+    </div>
+  );
+});
+
+export default QrCode_C;
